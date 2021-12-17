@@ -7,7 +7,7 @@
 ### Client
 > + React
 
-## Server
+### Server
 > + Node.js
 > + koa
 > + MongoDB
