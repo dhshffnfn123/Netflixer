@@ -91,4 +91,4 @@ exports.update = ctx => {
         ...ctx.request.body,
     };
     ctx.body = videos[index];
-};
+}; 

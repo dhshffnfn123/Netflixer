@@ -1,4 +1,6 @@
 const Router = require('koa-router');
+const videosCtrl = require('./videos.ctrl');
+
 const videos = new Router();
 
 const printInfo = ctx => {
@@ -9,10 +11,10 @@ const printInfo = ctx => {
     };
 };
 
-videos.get('/', printInfo);
-videos.post('/', printInfo);
-videos.get('/:id', printInfo);
-videos.delete('/:id', printInfo);
-videos.put('/:id', printInfo);
-videos.patch('/:id', printInfo);
+videos.get('/', videosCtrl.list);
+videos.post('/', videosCtrl.write);
+videos.get('/:id', videosCtrl.read);
+videos.delete('/:id', videosCtrl.remove);
+videos.put('/:id', videosCtrl.replace);
+videos.patch('/:id', videosCtrl.update);
 module.exports = videos;
