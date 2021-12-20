@@ -12,3 +12,6 @@ const VideoSchema = new Schema({
   summary: String,
   tags: [String],
 });
+
+const Video = mongoose.model('Video', VideoSchema);
+export default Video;
