@@ -1,8 +1,8 @@
-const Router = require('koa-router');
-const videos = require('./videos/index');
+import Router from 'koa-router';
+import videos from './videos';
 
 const api = new Router();
 
 api.use('/videos', videos.routes());
 
-module.exports = api;
+export default api;
