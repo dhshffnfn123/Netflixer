@@ -1,11 +1,11 @@
 import Review from '../../models/review';
 import mongoose from 'mongoose';
-import Joi from '../../../node_modules/joi/lib/index';
+import Joi from 'joi';
 
 const { ObjectId } = mongoose.Types;
 
 export const checkObjectId = (ctx, next) => {
-  const schema = Joi.Object().keys({
+  const schema = Joi.object().keys({
     videoId: Joi.number().required(),
     text: Joi.string().required(),
   });
@@ -40,9 +40,28 @@ export const write = async (ctx) => {
 };
 
 export const list = async (ctx) => {
+  const page = parseInt(ctx.query.page || '1', 10);
+
+  if (page < 1) {
+    ctx.status = 400;
+    return;
+  }
   try {
-    const reviews = await Review.find().exec();
-    ctx.body = reviews;
+    const reviews = await Review.find()
+      .sort({ _id: -1 })
+      .limit(20)
+      .skip((page - 1) * 10)
+      .lean()
+      .exec();
+    const reviewCount = await Review.countDocuments().exec();
+    ctx.set('Last-Page', Math.ceil(reviewCount / 10));
+    ctx.body = reviews.map((review) => ({
+      ...review,
+      text:
+        review.text.length < 200
+          ? review.text
+          : `${review.text.slice(0, 200)}...`,
+    }));
   } catch (e) {
     ctx.throw(500, e);
   }
