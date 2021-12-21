@@ -1,28 +1,25 @@
 import Review from '../../models/review';
 import mongoose from 'mongoose';
-import Joi from 'joi';
 
 const { ObjectId } = mongoose.Types;
 
-export const checkObjectId = (ctx, next) => {
-  const schema = Joi.object().keys({
-    videoId: Joi.number().required(),
-    text: Joi.string().required(),
-  });
-
-  const result = schema.validate(ctx.request.body);
-  if (result.error) {
-    ctx.status = 400;
-    ctx.body = result.error;
-    return;
-  }
-
+export const getReviewById = async (ctx, next) => {
   const { id } = ctx.params;
   if (!ObjectId.isValid(id)) {
     ctx.status = 400;
     return;
   }
-  return next();
+  try {
+    const review = await Review.findById(id);
+    if (!review) {
+      ctx.status = 404;
+      return;
+    }
+    ctx.state.review = review;
+    return next();
+  } catch (e) {
+    ctx.throw(500, e);
+  }
 };
 
 export const write = async (ctx) => {
@@ -30,6 +27,7 @@ export const write = async (ctx) => {
   const review = new Review({
     videoId,
     text,
+    user: ctx.state.user,
   });
   try {
     await review.save();
@@ -75,4 +73,13 @@ export const remove = async (ctx) => {
   } catch (e) {
     ctx.throw(500, e);
   }
+};
+
+export const checkOwnVideo = (ctx, next) => {
+  const { user, video } = ctx.state;
+  if (video.user.username !== user._id) {
+    ctx.status = 403;
+    return;
+  }
+  return next();
 };
