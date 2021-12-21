@@ -11,4 +11,5 @@
 > + Node.js
 > + koa (koa-bodyparser, koa-router)
 > + MongoDB
+> + jsonwebtoken
 
