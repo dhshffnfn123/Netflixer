@@ -1,9 +1,22 @@
 import Review from '../../models/review';
 import mongoose from 'mongoose';
+import Joi from '../../../node_modules/joi/lib/index';
 
 const { ObjectId } = mongoose.Types;
 
 export const checkObjectId = (ctx, next) => {
+  const schema = Joi.Object().keys({
+    videoId: Joi.number().required(),
+    text: Joi.string().required(),
+  });
+
+  const result = schema.validate(ctx.request.body);
+  if (result.error) {
+    ctx.status = 400;
+    ctx.body = result.error;
+    return;
+  }
+
   const { id } = ctx.params;
   if (!ObjectId.isValid(id)) {
     ctx.status = 400;

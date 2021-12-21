@@ -5,8 +5,12 @@ const videos = new Router();
 
 videos.get('/', videosCtrl.list);
 videos.post('/', videosCtrl.write);
-videos.get('/:id', videosCtrl.checkObjectId, videosCtrl.read);
-videos.delete('/:id', videosCtrl.checkObjectId, videosCtrl.remove);
-videos.patch('/:id', videosCtrl.checkObjectId, videosCtrl.update);
+
+const video = new Router(); // /api/videos/:id
+video.get('/', videosCtrl.checkObjectId, videosCtrl.read);
+video.delete('/', videosCtrl.checkObjectId, videosCtrl.remove);
+video.patch('/', videosCtrl.checkObjectId, videosCtrl.update);
+
+videos.use('/:id', videosCtrl.checkObjectId, video.routes());
 
 export default videos;

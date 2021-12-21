@@ -1,9 +1,28 @@
 import Video from '../../models/video';
 import mongoose from 'mongoose';
+import Joi from 'joi';
 
 const { ObjectId } = mongoose.Types;
 
 export const checkObjectId = (ctx, next) => {
+  const schema = Joi.object().keys({
+    title: Joi.string().required(),
+    release: Joi.string().required(),
+    age: Joi.string().required(),
+    runtime: Joi.string().required(),
+    characters: Joi.array().items(Joi.string()).required(),
+    director: Joi.string().required(),
+    summary: Joi.string().required(),
+    tags: Joi.array().items(Joi.string()).required(),
+  });
+
+  const result = schema.validate(ctx.request.body);
+  if (result.error) {
+    ctx.status = 400;
+    ctx.body = result.error;
+    return;
+  }
+
   const { id } = ctx.params;
   if (!ObjectId.isValid(id)) {
     ctx.status = 400;
