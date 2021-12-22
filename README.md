@@ -7,6 +7,7 @@
 ### Client
 > + React
 > + react-router-dom v5
+> + styled-components
 
 ### Server
 > + Node.js
