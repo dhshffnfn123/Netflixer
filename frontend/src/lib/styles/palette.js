@@ -1,7 +1,8 @@
 const palette = {
-  backgroundColor: '#343a40',
+  backgroundColor: '#222222',
   inputBoxColor: '#868e96',
-  fontColor: '#c92a2a',
+  logoFontColor: '#c92a2a',
+  fontColor: '#495057',
 };
 
 export default palette;
