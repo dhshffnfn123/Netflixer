@@ -8,10 +8,11 @@
 > + React
 > + react-router-dom v5
 > + styled-components
+> + redux (react-redux, redux-actions, immer ...)
 
 ### Server
 > + Node.js
-> + koa (koa-bodyparser, koa-router)
+> + koa (koa-bodyparser, koa-router ...)
 > + MongoDB
 > + jsonwebtoken
 
