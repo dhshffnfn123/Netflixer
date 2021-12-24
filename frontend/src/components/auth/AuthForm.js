@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
+import { visibleAuthFromBlock } from '../../lib/animation/loginPageAnimation';
 
 const AuthFormBlock = styled.div`
 margin-left: 6.2rem;
+opacity: 0;
+animation: ${visibleAuthFromBlock} 1s 3.2s forwards;
   p {
     margin: 0;
     color: ${palette.fontColor};
