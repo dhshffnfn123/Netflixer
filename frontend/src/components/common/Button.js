@@ -1,28 +1,53 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import palette from '../../lib/styles/palette';
 
 const StyledButton = styled.button`
-  border: 2px solid ${palette.fontColor};
   border-radius: 4px;
   font-size: 0.7rem;
   font-weight: bold;
-  padding: 1rem 1rem;
-  margin-left: 1rem;
-  margin-top: -2rem;
   position: relative;
   bottom: 3px;
   transition: all 0.3s ease;
-  color: ${palette.fontColor};
   outline: none;
   cursor: pointer;
-
-  background: ${palette.backgroundColor};
+  background: gray;
   &:hover {
-    border: 2px solid ${palette.logoFontColor};
-    color: ${palette.logoFontColor};
-    box-shadow: 0 0 0 5px black;
+    background: black;
+    color: white;
   }
+
+  ${(props) =>
+    props.grayBorder &&
+    css`
+      border: 2px solid ${palette.fontColor};
+      color: ${palette.fontColor};
+      background: ${palette.backgroundColor};
+      &:hover {
+        border: 2px solid ${palette.logoFontColor};
+        color: ${palette.logoFontColor};
+        box-shadow: 0 0 0 5px black;
+      }
+    `}
+
+  ${(props) =>
+    props.marginTopLeft &&
+    css`
+      margin-left: 1rem;
+      margin-top: -2rem;
+    `}
+  ${(props) =>
+    props.login &&
+    css`
+      padding: 1rem 1rem;
+    `}
+  ${(props) =>
+    props.register &&
+    css`
+      padding: 0.5rem 5rem;
+      bottom: -38px;
+      margin-left: 0px;
+    `}
 `;
 
 const Button = (props) => <StyledButton {...props} />;
