@@ -45,6 +45,7 @@ const StyledInput = styled.input`
   width: 220px;
   margin-bottom: 0.5rem;
   transition: all 0.5s ease;
+  color: gray;
   &:focus {
     color: $oc-teal-7;
     border-bottom: 2px solid ${palette.logoFontColor};
@@ -72,7 +73,7 @@ const textMap = {
   register: 'Register_',
 };
 
-const AuthForm = ({ type }) => {
+const AuthForm = ({ type, form, onChange, onSubmit }) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
@@ -87,12 +88,16 @@ const AuthForm = ({ type }) => {
             autoComplete="username"
             name="username"
             placeholder="ID"
+            onChange={onChange}
+            value={form.username}
           />
           <StyledInput
             autoComplete="new-password"
             name="password"
             placeholder="PW"
             type="password"
+            onChange={onChange}
+            value={form.password}
           />
           {type === 'login' ? (
             <Button login grayBorder marginTopLeft>
@@ -110,18 +115,24 @@ const AuthForm = ({ type }) => {
             autoComplete="username"
             name="username"
             placeholder="ID"
+            onChange={onChange}
+            value={form.username}
           />
           <StyledInput
             autoComplete="new-password"
             name="password"
             placeholder="PW"
             type="password"
+            onChange={onChange}
+            value={form.password}
           />
           <StyledInput
             autoComplete="new-password"
             name="passwordConfirm"
             placeholder="PW Confirm"
             type="password"
+            onChange={onChange}
+            value={form.passwordConfirm}
           />
           {type === 'login' ? (
             <Button login grayBorder marginTopLeft>
