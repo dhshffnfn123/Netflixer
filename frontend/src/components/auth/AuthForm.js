@@ -83,7 +83,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
         <StyledParagraph register>{text}</StyledParagraph>
       )}
       {type === 'login' ? (
-        <form style={{ width: '420px' }}>
+        <form onSubmit={onSubmit} style={{ width: '420px' }}>
           <StyledInput
             autoComplete="username"
             name="username"
@@ -110,7 +110,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
           )}
         </form>
       ) : (
-        <form style={{ width: '300px' }}>
+        <form onSubmit={onSubmit} style={{ width: '300px' }}>
           <StyledInput
             autoComplete="username"
             name="username"
