@@ -29,7 +29,7 @@ const StyledParagraph = styled.p`
     props.register &&
     css`
       margin: 0;
-      margin-left: 3rem;
+      margin-left: 3.1rem;
       margin-bottom: 0.2rem;
     `}
 `;
@@ -73,14 +73,20 @@ const textMap = {
   register: 'Register_',
 };
 
-const AuthForm = ({ type, form, onChange, onSubmit }) => {
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
       {type === 'login' ? (
-        <StyledParagraph login>{text}</StyledParagraph>
+        <StyledParagraph login>
+          {text}
+          {error && <span style={{ color: '#c92a2a' }}>{error}</span>}
+        </StyledParagraph>
       ) : (
-        <StyledParagraph register>{text}</StyledParagraph>
+        <StyledParagraph register>
+          {text}
+          {error && <span style={{ color: '#c92a2a' }}>{error}</span>}
+        </StyledParagraph>
       )}
       {type === 'login' ? (
         <form onSubmit={onSubmit} style={{ width: '420px' }}>
