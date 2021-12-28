@@ -6,7 +6,7 @@ import Button from './Button';
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
-  background: white;
+  background: #222222;
   box-shadow: 0px 2px 4px black;
 `;
 
@@ -15,10 +15,12 @@ const Wrapper = styled(Responsive)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #222222;
   .logo {
-    font-size: 1.125rem;
-    font-weight: 800;
+    font-size: 2.125rem;
+    font-weight: 600;
     letter-spacing: 2px;
+    color: #c92a2a;
   }
   .right {
     display: flex;
@@ -36,7 +38,9 @@ const Header = () => {
         <Wrapper>
           <div className="logo">NETFLIXER</div>
           <div className="right">
-            <Button>LOGIN</Button>
+            <Button header grayBorder>
+              LOGIN
+            </Button>
           </div>
         </Wrapper>
       </HeaderBlock>

@@ -48,6 +48,15 @@ const StyledButton = styled.button`
       bottom: -38px;
       margin-left: 0px;
     `}
+    ${(props) =>
+    props.header &&
+    css`
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 2px solid #adb5bd;
+      color: #adb5bd;
+    `}
 `;
 
 const Button = (props) => <StyledButton {...props} />;
