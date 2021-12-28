@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../components/common/Header';
+import HeaderContainer from '../containers/common/HeaderContainer';
 const MainPage = () => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <div>HEllo</div>
     </>
   );

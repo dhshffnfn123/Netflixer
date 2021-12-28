@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Responsive from './Responsive';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -31,17 +32,34 @@ const Wrapper = styled(Responsive)`
 const Spacer = styled.div`
   height: 4rem;
 `;
-const Header = () => {
+
+const UserInfo = styled.div`
+  font-weight: 500;
+  margin-right: 1rem;
+  color: #dee2e6;
+`;
+const Header = ({ user, onLogout }) => {
   return (
     <>
       <HeaderBlock>
         <Wrapper>
-          <div className="logo">NETFLIXER</div>
-          <div className="right">
-            <Button header grayBorder>
-              LOGIN
-            </Button>
-          </div>
+          <Link to="/" className="logo">
+            NETFLIXER
+          </Link>
+          {user ? (
+            <div className="right">
+              <UserInfo>{user.username}</UserInfo>
+              <Button onClick={onLogout} header grayborder>
+                LOGOUT
+              </Button>
+            </div>
+          ) : (
+            <div className="right">
+              <Button to="/login" header grayborder>
+                LOGIN
+              </Button>
+            </div>
+          )}
         </Wrapper>
       </HeaderBlock>
       <Spacer />

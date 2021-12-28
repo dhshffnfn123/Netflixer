@@ -106,11 +106,11 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             value={form.password}
           />
           {type === 'login' ? (
-            <Button login grayBorder marginTopLeft>
+            <Button login grayborder marginTopLeft>
               LOGIN
             </Button>
           ) : (
-            <Button register grayBorder marginTopLeft>
+            <Button register grayborder marginTopLeft>
               REGISTER
             </Button>
           )}
@@ -141,11 +141,11 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             value={form.passwordConfirm}
           />
           {type === 'login' ? (
-            <Button login grayBorder marginTopLeft>
+            <Button login grayborder marginTopLeft>
               LOGIN
             </Button>
           ) : (
-            <Button register grayBorder marginTopLeft>
+            <Button register grayborder marginTopLeft>
               REGISTER
             </Button>
           )}
