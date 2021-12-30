@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import Responsive from './Responsive';
 import Button from './Button';
 import { Link } from 'react-router-dom';
+import palette from '../../lib/styles/palette';
 
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
   background: #222222;
-  box-shadow: 0px 2px 4px black;
+  box-shadow: 0px 2px 4px ${palette.logoFontColor};
 `;
 
 const Wrapper = styled(Responsive)`
