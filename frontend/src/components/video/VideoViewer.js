@@ -6,7 +6,6 @@ import Responsive from '../common/Responsive';
 const VideoViewerBlock = styled(Responsive)`
   /* background: ${palette.backgroundColor}; */
   margin-top: 5rem;
-  background: gray;
   display: grid;
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -17,11 +16,12 @@ const VideoViewerBlock = styled(Responsive)`
 `;
 const VideoPoster = styled.div`
   height: 800px;
-  background: cornflowerblue;
+  background-image: url('/img/deadfool.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 100px;
 `;
-const VideoInfo = styled.div`
-  background: seagreen;
-`;
+const VideoInfo = styled.div``;
 
 const VideoViewer = () => {
   return (
