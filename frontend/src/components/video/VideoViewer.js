@@ -164,6 +164,12 @@ const StillCut = styled.div`
   }
 `;
 
+/* --------------------------------- review --------------------------------- */
+
+const ReviewBlock = styled(Responsive)`
+  background: white;
+`;
+
 const VideoViewer = () => {
   return (
     <VideoViewerBlock>
