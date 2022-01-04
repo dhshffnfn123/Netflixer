@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Button from '../common/Button';
@@ -12,6 +12,7 @@ const ReviewBlock = styled(Responsive)`
     margin-top: 0;
   }
 `;
+const ReviewForm = styled.form``;
 const ReviewButton = styled(Button)`
   position: unset;
   width: 100px;
@@ -65,11 +66,30 @@ const ReviewInput = styled.input`
 `;
 
 const ReviewBox = () => {
+  const [input, setInput] = useState('');
+  const onChange = useCallback((e) => {
+    setInput(e.target.value);
+  }, []);
+
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      setInput('');
+    },
+    [input],
+  );
+
   return (
-    <ReviewBlock>
-      <ReviewButton type="submit">리뷰 쓰기</ReviewButton>
-      <ReviewInput placeholder="리뷰를 작성하세요" />
-    </ReviewBlock>
+    <ReviewForm onSubmit={onSubmit}>
+      <ReviewBlock>
+        <ReviewButton type="submit">리뷰 쓰기</ReviewButton>
+        <ReviewInput
+          value={input}
+          onChange={onChange}
+          placeholder="리뷰를 작성하세요"
+        />
+      </ReviewBlock>
+    </ReviewForm>
   );
 };
 export default ReviewBox;
