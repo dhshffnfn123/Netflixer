@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Button from '../common/Button';
@@ -65,8 +65,20 @@ const ReviewInput = styled.input`
   }
 `;
 
-const ReviewBox = () => {
+const ReviewBox = ({ reviews, onChangeReviews }) => {
   const [input, setInput] = useState('');
+  const [localReviews, setLocalReviews] = useState([]);
+
+  const insertReview = useCallback(
+    (review) => {
+      if (!review) return;
+      const nextReviews = [...localReviews, review];
+      setLocalReviews(nextReviews);
+      onChange(nextReviews);
+    },
+    [localReviews, onChangeReviews],
+  );
+
   const onChange = useCallback((e) => {
     setInput(e.target.value);
   }, []);
@@ -78,6 +90,10 @@ const ReviewBox = () => {
     },
     [input],
   );
+
+  useEffect(() => {
+    setLocalReviews(reviews);
+  }, [reviews]);
 
   return (
     <ReviewForm onSubmit={onSubmit}>
