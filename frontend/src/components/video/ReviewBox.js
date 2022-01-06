@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Button from '../common/Button';
@@ -65,43 +65,18 @@ const ReviewInput = styled.input`
   }
 `;
 
-const ReviewBox = ({ reviews, onChangeReviews }) => {
-  const [input, setInput] = useState('');
-  const [localReviews, setLocalReviews] = useState([]);
-
-  const insertReview = useCallback(
-    (review) => {
-      if (!review) return;
-      const nextReviews = [...localReviews, review];
-      setLocalReviews(nextReviews);
-      onChange(nextReviews);
-    },
-    [localReviews, onChangeReviews],
-  );
-
-  const onChange = useCallback((e) => {
-    setInput(e.target.value);
-  }, []);
-
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      setInput('');
-    },
-    [input],
-  );
-
-  useEffect(() => {
-    setLocalReviews(reviews);
-  }, [reviews]);
+const ReviewBox = ({ text, onChangeField, onPublish }) => {
+  const onChangeText = (e) => {
+    onChangeField({ key: 'text', value: e.target.value });
+  };
 
   return (
-    <ReviewForm onSubmit={onSubmit}>
+    <ReviewForm>
       <ReviewBlock>
-        <ReviewButton type="submit">리뷰 쓰기</ReviewButton>
+        <ReviewButton onClick={onPublish}>리뷰 쓰기</ReviewButton>
         <ReviewInput
-          value={input}
-          onChange={onChange}
+          value={text}
+          onChange={onChangeText}
           placeholder="리뷰를 작성하세요"
         />
       </ReviewBlock>
