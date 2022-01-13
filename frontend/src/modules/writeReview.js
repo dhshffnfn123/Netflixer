@@ -19,7 +19,11 @@ export const writeReview = createAction(WRITE_REVIEW, ({ text }) => ({
   text,
 }));
 
-const writeReviewSaga = createRequestSaga(WRITE_REVIEW, writeReviewSaga);
+const writeReviewSaga = createRequestSaga(WRITE_REVIEW, reviewsAPI.writeReview);
+
+export function* writeSaga() {
+  yield takeLatest(WRITE_REVIEW, writeReviewSaga);
+}
 
 const initialState = {
   text: '',
