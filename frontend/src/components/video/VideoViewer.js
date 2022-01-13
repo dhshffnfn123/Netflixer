@@ -166,7 +166,20 @@ const StillCut = styled.div`
   }
 `;
 
-const VideoViewer = () => {
+const VideoViewer = ({ video, error, loading }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <VideoViewerBlock>존재하지 않는 페이지입니다.</VideoViewerBlock>;
+    }
+    return <VideoViewerBlock>오류 발생!</VideoViewerBlock>;
+  }
+
+  if (loading || !video) {
+    return null;
+  }
+
+  const { title, release, age, runtime, characters, director, summary } = video;
+
   return (
     <VideoViewerBlock>
       <VideoPoster />
