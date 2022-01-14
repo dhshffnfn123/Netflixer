@@ -7,22 +7,18 @@ import Tags from '../common/Tags';
 
 const VideoListBlock = styled(Responsive)`
   margin-top: 3rem;
-`;
-
-const WriteVideoButtonWrapper = styled.div`
+  background: white;
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 3rem;
 `;
 
 const VideoItemBlock = styled.div`
   padding-top: 3rem;
   padding-bottom: 3rem;
+  background: gray;
+  margin-bottom: 100px;
+  width: 300px;
+
   &:first-child {
-    padding-top: 0;
-  }
-  & + & {
-    border-top: 1px solid ${palette.logoFontColor};
   }
 
   h2 {
@@ -52,11 +48,9 @@ const VideoItem = () => {
 const VideoList = () => {
   return (
     <VideoListBlock>
-      <div>
-        <VideoItem />
-        <VideoItem />
-        <VideoItem />
-      </div>
+      <VideoItem />
+      <VideoItem />
+      <VideoItem />
     </VideoListBlock>
   );
 };
