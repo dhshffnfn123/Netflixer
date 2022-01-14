@@ -23,8 +23,17 @@ export const getVideoById = async (ctx, next) => {
 };
 
 export const write = async (ctx) => {
-  const { title, release, age, runtime, characters, director, summary, tags } =
-    ctx.request.body;
+  const {
+    title,
+    release,
+    age,
+    runtime,
+    characters,
+    director,
+    summary,
+    picture,
+    tags,
+  } = ctx.request.body;
   const video = new Video({
     title,
     release,
@@ -33,6 +42,7 @@ export const write = async (ctx) => {
     characters,
     director,
     summary,
+    picture,
     tags,
     user: ctx.state.user,
   });

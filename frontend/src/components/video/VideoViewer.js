@@ -24,7 +24,6 @@ const VideoViewerBlock = styled(Responsive)`
   }
 `;
 const VideoPoster = styled.div`
-  background-image: url('/img/deadfool.png');
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 100px;
@@ -41,6 +40,12 @@ const VideoPoster = styled.div`
 `;
 const VideoInfo = styled.div`
   padding-left: 100px;
+  @media (max-width: 1500px) {
+    padding-left: 40px;
+  }
+  @media (max-width: 1024px) {
+    padding-left: 40px;
+  }
   @media (max-width: 768px) {
     width: 400px;
     padding-left: 0;
@@ -56,6 +61,13 @@ const Title = styled.p`
   text-shadow: 0px 0px 4px #ced4da;
   padding-bottom: 10px;
   border-bottom: 3px solid #ced4da;
+
+  @media (max-width: 1500px) {
+    font-size: 2.2rem;
+  }
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
 `;
 const Info = styled.div`
   height: 30px;
@@ -96,6 +108,7 @@ const Director = styled.p`
   color: #ced4da;
   margin: 0;
   margin-bottom: 5px;
+  height: 21px;
 `;
 const StillCutText = styled.p`
   margin: 0;
@@ -111,8 +124,8 @@ const StillCutText = styled.p`
   @media (max-width: 1024px) {
     font-size: 1.5rem;
     position: relative;
-    right: 470px;
-    margin-top: 70px;
+    right: 410px;
+    margin-top: 100px;
   }
   @media (max-width: 768px) {
     position: unset;
@@ -140,7 +153,7 @@ const StillCut = styled.div`
   }
   @media (max-width: 1024px) {
     position: relative;
-    right: 470px;
+    right: 410px;
     width: 735px;
     div:nth-child(3) {
       display: block;
@@ -169,40 +182,60 @@ const StillCut = styled.div`
 const VideoViewer = ({ video, error, loading }) => {
   if (error) {
     if (error.response && error.response.status === 404) {
-      return <VideoViewerBlock>존재하지 않는 페이지입니다.</VideoViewerBlock>;
+      return (
+        <VideoViewerBlock style={{ color: 'white' }}>
+          존재하지 않는 페이지입니다.
+        </VideoViewerBlock>
+      );
     }
-    return <VideoViewerBlock>오류 발생!</VideoViewerBlock>;
+    return (
+      <VideoViewerBlock style={{ color: 'red' }}>오류 발생!</VideoViewerBlock>
+    );
   }
 
   if (loading || !video) {
     return null;
   }
 
-  const { title, release, age, runtime, characters, director, summary } = video;
-
+  const {
+    title,
+    release,
+    age,
+    runtime,
+    characters,
+    director,
+    summary,
+    picture,
+  } = video;
   return (
     <VideoViewerBlock>
-      <VideoPoster />
+      <VideoPoster style={{ backgroundImage: `url("/img/${picture}.png")` }} />
       <VideoInfo>
-        <Title>데드풀</Title>
+        <Title>{title}</Title>
         <Info>
-          <span>2016</span> <span>청불</span> <span>1시간 48분</span>
+          <span>{release}</span> <span>{age}</span> <span>{runtime}</span>
         </Info>
-        <Summary>
-          세상에 이런 히어로쯤 하나 괜찮잖아? 비밀 실험에 참여한 후 특별한
-          능력을 갖게 된 주인공. 쌔끈한 빨간 슈트에 찰진 드립 장착한 '데드풀'로
-          거듭난다. 파워는 어마무시, 책임감은 개나 줘버려. 어디 한번 놀아보실까?
-          뮤직 큐.
-        </Summary>
-        <Director>감독 : 팀 밀러</Director>
+        <Summary>{summary}</Summary>
+        <Director>감독 : {director}</Director>
         <Director>
-          출연 : 라이언 레이놀즈, 모레나 바카린, 에드 스크레인
+          주연 :{' '}
+          {characters.map((character) => (
+            <span key={character} className="character">
+              {character}&nbsp;&nbsp;
+            </span>
+          ))}
         </Director>
         <StillCutText>Still Cut_</StillCutText>
         <StillCut>
-          <div style={{ backgroundImage: 'url("/img/still/deadfool1.jpg")' }} />
-          <div style={{ backgroundImage: 'url("/img/still/deadfool2.jpg")' }} />
-          <div style={{ backgroundImage: 'url("/img/still/deadfool3.jpg")' }} />
+          <div
+            style={{ backgroundImage: `url("/img/still/${picture}1.jpg")` }}
+          />
+          <div
+            style={{ backgroundImage: `url("/img/still/${picture}2.jpg")` }}
+          />
+          <div
+            style={{ backgroundImage: `url("/img/still/${picture}3.jpg")` }}
+          />
         </StillCut>
       </VideoInfo>
     </VideoViewerBlock>

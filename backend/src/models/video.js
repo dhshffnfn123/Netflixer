@@ -10,6 +10,7 @@ const VideoSchema = new Schema({
   characters: [String],
   director: String,
   summary: String,
+  picture: String,
   tags: [String],
   user: {
     _id: mongoose.Types.ObjectId,
