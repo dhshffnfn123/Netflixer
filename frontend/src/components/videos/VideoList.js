@@ -12,7 +12,7 @@ const VideoListBlock = styled(Responsive)`
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    width: 550px;
+    width: 500px;
   }
 `;
 
@@ -21,7 +21,7 @@ const VideoItemBlock = styled.div`
   margin-bottom: 100px;
   box-shadow: black 0 0 10px;
   width: 320px;
-  height: 530px;
+  height: 550px;
 
   .box > * {
     padding-left: 10px;
