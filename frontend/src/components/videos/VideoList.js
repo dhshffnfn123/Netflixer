@@ -19,13 +19,22 @@ const VideoListBlock = styled(Responsive)`
 const VideoItemBlock = styled.div`
   background: #3e3e3e;
   margin-bottom: 100px;
-  margin-right: 4rem;
+  margin-left: 1.45rem;
+  margin-right: 1.45rem;
   box-shadow: black 0 0 10px;
   width: 320px;
   height: 530px;
 
   .box > * {
     padding-left: 10px;
+  }
+  @media (max-width: 1500px) {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+  @media (max-width: 1024px) {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 
   @media (max-width: 768px) {
@@ -38,10 +47,10 @@ const VideoItemBlock = styled.div`
 
 const PosterBox = styled.div`
   width: 100%;
-  height: 455px;
+  height: 456.5px;
   background-repeat: no-repeat;
   background-size: contain;
-  border: black 1px solid;
+  border-right: 1px solid black;
 
   @media (max-width: 768px) {
     width: 210px;
