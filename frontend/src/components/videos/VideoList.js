@@ -40,6 +40,7 @@ const PosterBox = styled.div`
   height: 455px;
   background-repeat: no-repeat;
   background-size: contain;
+  border: black 1px solid;
 
   @media (max-width: 768px) {
     width: 210px;
