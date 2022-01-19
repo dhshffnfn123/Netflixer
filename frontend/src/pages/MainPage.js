@@ -1,12 +1,12 @@
 import React from 'react';
 import HeaderContainer from '../containers/common/HeaderContainer';
-import VideoList from '../components/videos/VideoList';
+import VideoListContainer from '../containers/videos/VideoListContainer';
 
 const MainPage = () => {
   return (
     <>
       <HeaderContainer />
-      <VideoList />
+      <VideoListContainer />
     </>
   );
 };

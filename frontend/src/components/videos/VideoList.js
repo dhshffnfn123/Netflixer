@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
-import palette from '../../lib/styles/palette';
 import Tags from '../common/Tags';
+import { Link } from 'react-router-dom';
 
 const VideoListBlock = styled(Responsive)`
-  margin-top: 3rem;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
+  .videosBox {
+    margin-top: 3rem;
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+  }
   @media (max-width: 768px) {
     width: 500px;
   }
@@ -19,9 +19,10 @@ const VideoListBlock = styled(Responsive)`
 const VideoItemBlock = styled.div`
   background: #3e3e3e;
   margin-bottom: 100px;
+  margin-right: 4rem;
   box-shadow: black 0 0 10px;
   width: 320px;
-  height: 550px;
+  height: 530px;
 
   .box > * {
     padding-left: 10px;
@@ -69,39 +70,35 @@ const Summary = styled.div`
   }
 `;
 
-const VideoItem = () => {
+const VideoItem = ({ video }) => {
+  const { title, tags, picture, summary, _id } = video;
   return (
     <VideoItemBlock>
-      <PosterBox style={{ backgroundImage: `url("/img/deadpool.png")` }} />
+      <PosterBox style={{ backgroundImage: `url("/img/${picture}.png")` }} />
       <div className="box">
-        <Title>데드풀</Title>
-        <Tags tags={['태그1', '태그2', '태그3']} />
-        <Summary>
-          세상에 이런 히어로쯤 하나 괜찮잖아? 비밀 실험에 참여한 후 특별한
-          능력을 갖게 된 주인공. 쌔끈한 빨간 슈트에 찰진 드립 장착한 '데드풀'로
-          거듭난다. 파워는 어마무시, 책임감은 개나 줘버려. 어디 한번 놀아보실까?
-          뮤직 큐.
-        </Summary>
+        <Title>
+          <Link to={`/@${_id}`}>{title}</Link>
+        </Title>
+        <Tags tags={tags} />
+        <Summary>{summary}</Summary>
       </div>
     </VideoItemBlock>
   );
 };
 
-const VideoList = () => {
+const VideoList = ({ videos, loading, error }) => {
+  if (error) {
+    return <VideoListBlock>에러가 발생했습니다.</VideoListBlock>;
+  }
   return (
     <VideoListBlock>
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
+      {!loading && videos && (
+        <div className="videosBox">
+          {videos.map((video) => (
+            <VideoItem video={video} key={video._id} />
+          ))}
+        </div>
+      )}
     </VideoListBlock>
   );
 };
