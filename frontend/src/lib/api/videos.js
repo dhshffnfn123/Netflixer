@@ -8,5 +8,5 @@ export const listVideo = (page, username, tag) => {
     username,
     tag,
   });
-  return client.get(`/api/videos/${queryString}`);
+  return client.get(`/api/videos?${queryString}`);
 };
