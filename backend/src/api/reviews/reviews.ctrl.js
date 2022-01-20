@@ -23,7 +23,8 @@ export const getReviewById = async (ctx, next) => {
 };
 
 export const write = async (ctx) => {
-  const { videoId, text } = ctx.request.body;
+  const { text } = ctx.request.body;
+  const { videoId } = ctx.params;
   const review = new Review({
     videoId,
     text,

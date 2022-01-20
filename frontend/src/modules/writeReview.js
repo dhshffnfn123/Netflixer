@@ -15,8 +15,9 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
   key,
   value,
 }));
-export const writeReview = createAction(WRITE_REVIEW, ({ text }) => ({
+export const writeReview = createAction(WRITE_REVIEW, ({ text, videoId }) => ({
   text,
+  videoId,
 }));
 
 const writeReviewSaga = createRequestSaga(WRITE_REVIEW, reviewsAPI.writeReview);

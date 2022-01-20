@@ -17,10 +17,10 @@ const VideoListContainer = ({ location, match }) => {
   );
   useEffect(() => {
     const { username } = match.params;
-    const { tag, page } = qs.parse(location.search, {
+    const { tag } = qs.parse(location.search, {
       ignoreQueryPrefix: true,
     });
-    dispatch(listVideos({ tag, username, page }));
+    dispatch(listVideos({ tag, username }));
   }, [dispatch, location.search]);
 
   return <VideoList loading={loading} error={error} videos={videos} />;

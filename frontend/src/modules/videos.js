@@ -8,10 +8,10 @@ import { takeLatest } from 'redux-saga/effects';
 const [LIST_VIDEOS, LIST_VIDEOS_SUCCESS, LIST_VIDEOS_FAILURE] =
   createRequestActionTypes('videos/LIST_VIDEOS');
 
-export const listVideos = createAction(
-  LIST_VIDEOS,
-  ({ tag, username, page }) => ({ tag, username, page }),
-);
+export const listVideos = createAction(LIST_VIDEOS, ({ tag, username }) => ({
+  tag,
+  username,
+}));
 
 const listVideosSaga = createRequestSaga(LIST_VIDEOS, videosAPI.listVideo);
 export function* videosSaga() {
