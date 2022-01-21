@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
-import Button from '../common/Button';
-import ReviewBoxContainer from '../../containers/review/ReviewBoxContainer';
 import WriteActionButtonsContainer from '../../containers/review/WriteActionButtonsContainer';
 
 const ReviewBlock = styled(Responsive)`

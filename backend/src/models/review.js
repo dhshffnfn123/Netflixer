@@ -3,11 +3,14 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const ReviewSchema = new Schema({
-  videoId: String,
   text: String,
   publishedDate: {
     type: Date,
     default: Date.now,
+  },
+  video: {
+    _id: mongoose.Types.ObjectId,
+    title: String,
   },
   user: {
     _id: mongoose.Types.ObjectId,
