@@ -22,8 +22,6 @@ const WriteActionButtonsContainer = ({ history }) => {
 
   useEffect(() => {
     if (review) {
-      const { _id } = review;
-      history.push(`/@${_id}`);
     }
     if (reviewError) {
       console.log(reviewError);
