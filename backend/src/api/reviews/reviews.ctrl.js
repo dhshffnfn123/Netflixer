@@ -1,6 +1,5 @@
 import Review from '../../models/review';
 import mongoose from 'mongoose';
-import { useSelector } from 'react-redux';
 
 const { ObjectId } = mongoose.Types;
 

@@ -6,16 +6,21 @@ import { writeReview } from '../../modules/writeReview';
 
 const WriteActionButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
+  const video = useSelector((state) => state.video);
+  const videoId = video.video._id;
   const { text, review, reviewError } = useSelector(({ write }) => ({
     text: write.text,
     review: write.review,
     reviewError: write.reviewError,
   }));
 
+  console.log(video.video._id);
+
   const onPublish = () => {
     dispatch(
       writeReview({
         text,
+        videoId,
       }),
     );
   };

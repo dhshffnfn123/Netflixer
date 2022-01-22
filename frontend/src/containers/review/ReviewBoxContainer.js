@@ -9,10 +9,12 @@ const ReviewBoxContainer = () => {
   const { text } = useSelector(({ write }) => ({
     text: write.text,
   }));
+
   const onChangeField = useCallback(
     (payload) => dispatch(changeField(payload)),
     [dispatch],
   );
+
   useEffect(() => {
     return () => {
       dispatch(initialize());

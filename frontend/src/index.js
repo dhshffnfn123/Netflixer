@@ -19,8 +19,11 @@ const store = createStore(
 function loadUser() {
   try {
     const user = localStorage.getItem('user');
+    const video = localStorage.getItem('video');
     if (!user) return;
+    if (!video) return;
     store.dispatch(tempSetUser(JSON.parse(user)));
+    store.dispatch(tempSetUser(JSON.parse(video)));
     store.dispatch(check());
   } catch (e) {
     console.log('localStorage is not working');

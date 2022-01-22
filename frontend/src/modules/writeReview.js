@@ -4,6 +4,7 @@ import createRequestSaga, {
 } from '../lib/createRequestSaga';
 import * as reviewsAPI from '../lib/api/reviews';
 import { takeLatest } from 'redux-saga/effects';
+import { useSelector } from 'react-redux';
 
 const INITIALIZE = 'write/INITIALIZE';
 const CHANGE_FIELD = 'write/CHANGE_FIELD';
@@ -15,8 +16,9 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
   key,
   value,
 }));
-export const writeReview = createAction(WRITE_REVIEW, ({ text }) => ({
+export const writeReview = createAction(WRITE_REVIEW, ({ text, video }) => ({
   text,
+  video,
 }));
 
 const writeReviewSaga = createRequestSaga(WRITE_REVIEW, reviewsAPI.writeReview);
@@ -27,6 +29,7 @@ export function* writeSaga() {
 
 const initialState = {
   text: '',
+  video: '',
   review: null,
   reviewError: null,
 };
