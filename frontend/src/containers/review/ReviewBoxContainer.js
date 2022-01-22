@@ -4,12 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReviewBox from '../../components/video/ReviewBox';
 import { changeField, initialize } from '../../modules/writeReview';
 
-const ReviewBoxContainer = () => {
+const ReviewBoxContainer = ({ match }) => {
   const dispatch = useDispatch();
   const { text } = useSelector(({ write }) => ({
     text: write.text,
   }));
-
   const onChangeField = useCallback(
     (payload) => dispatch(changeField(payload)),
     [dispatch],
