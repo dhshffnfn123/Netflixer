@@ -44,14 +44,18 @@ export const list = async (ctx) => {
     ctx.status = 400;
     return;
   }
+  const { videoId } = ctx.query;
+  const query = {
+    ...(videoId ? { videoId: videoId } : {}),
+  };
   try {
-    const reviews = await Review.find()
+    const reviews = await Review.find(query)
       .sort({ _id: -1 })
       .limit(20)
       .skip((page - 1) * 10)
       .lean()
       .exec();
-    const reviewCount = await Review.countDocuments().exec();
+    const reviewCount = await Review.countDocuments(query).exec();
     ctx.set('Last-Page', Math.ceil(reviewCount / 10));
     ctx.body = reviews.map((review) => ({
       ...review,
