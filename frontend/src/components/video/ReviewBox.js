@@ -5,7 +5,7 @@ import WriteActionButtonsContainer from '../../containers/review/WriteActionButt
 
 const ReviewBlock = styled(Responsive)`
   margin-top: 100px;
-  padding-bottom: 5rem;
+  padding-bottom: 1rem;
   display: flex;
   @media (max-width: 768px) {
     flex-wrap: wrap;
