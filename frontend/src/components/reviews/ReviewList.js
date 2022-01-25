@@ -8,7 +8,9 @@ const ReviewListBlock = styled(Responsive)`
   padding-bottom: 3rem;
 `;
 const ReviewItemBlock = styled.div`
-  margin-left: 100px;
+  @media (min-width: 1500px) {
+    margin-left: 100px;
+  }
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
