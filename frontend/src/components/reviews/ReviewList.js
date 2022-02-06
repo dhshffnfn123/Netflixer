@@ -33,23 +33,34 @@ const ReviewItemBlock = styled.div`
   }
 `;
 
-const ReviewItem = () => {
+const ReviewItem = ({ review }) => {
+  const { publishedDate, user, text } = review;
   return (
     <ReviewItemBlock>
-      <span>username</span>
-      <span>{new Date().toLocaleDateString()}</span>
-      <p>리뷰 내용의 일부분</p>
+      <span>{user.username}</span>
+      <span>{new Date(publishedDate)}</span>
+      <p>{text}</p>
     </ReviewItemBlock>
   );
 };
 
-const ReviewList = () => {
+const ReviewList = ({ reviews, loading, error }) => {
+  if (error) {
+    return (
+      <ReviewListBlock styled={{ color: 'red' }}>
+        에러가 발생했습니다.
+      </ReviewListBlock>
+    );
+  }
   return (
     <ReviewListBlock>
-      <ReviewItem />
-      <ReviewItem />
-      <ReviewItem />
-      <ReviewItem />
+      {!loading && reviews && (
+        <div>
+          {reviews.map((review) => (
+            <ReviewItem review={review} key={review._id} />
+          ))}
+        </div>
+      )}
     </ReviewListBlock>
   );
 };
