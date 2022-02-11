@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import qs from 'qs';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import ReviewList from '../../components/videos/VideoList';
-import { listReviews } from '../../modules/videos';
+import ReviewList from '../../components/reviews/ReviewList';
+import { listReviews } from '../../modules/reviews';
 
 const ReviewListContainer = ({ location, match }) => {
   const dispatch = useDispatch();
+
   const { reviews, error, loading, user } = useSelector(
     ({ reviews, loading, user }) => ({
       reviews: reviews.reviews,

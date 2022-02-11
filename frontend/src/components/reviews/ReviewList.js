@@ -38,7 +38,7 @@ const ReviewItem = ({ review }) => {
   return (
     <ReviewItemBlock>
       <span>{user.username}</span>
-      <span>{new Date(publishedDate)}</span>
+      <span>{new Date(publishedDate).toLocaleDateString()}</span>
       <p>{text}</p>
     </ReviewItemBlock>
   );
