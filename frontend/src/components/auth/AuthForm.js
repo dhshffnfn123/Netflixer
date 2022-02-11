@@ -168,3 +168,6 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
 };
 
 export default AuthForm;
+
+// 에러 시 에러발생 문구 시간지나면 사라지도록 할 것.
+// 몇 초 후 사라지게 하면 될 것
