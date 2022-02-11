@@ -6,7 +6,7 @@ import createRequestSaga, {
 } from '../lib/createRequestSaga';
 
 const [LIST_REVIEWS, LIST_REVIEWS_SUCCESS, LIST_REVIEWS_FAILURE] =
-  createRequestActionTypes('reivews/LIST_REVIEWS');
+  createRequestActionTypes('reviews/LIST_REVIEWS');
 
 export const listReviews = createAction(LIST_REVIEWS, ({ videoId }) => ({
   videoId,
