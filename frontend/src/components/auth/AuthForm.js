@@ -3,7 +3,10 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
-import { visibleAuthFromBlock } from '../../lib/animation/loginPageAnimation';
+import {
+  visibleAuthFromBlock,
+  visibleError,
+} from '../../lib/animation/loginPageAnimation';
 
 const AuthFormBlock = styled.div`
   margin-left: 6.2rem;
@@ -32,6 +35,9 @@ const StyledParagraph = styled.p`
       margin-left: 3.1rem;
       margin-bottom: 0.2rem;
     `}
+  .visible {
+    animation: ${visibleError} 2s 1s forwards;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -80,12 +86,20 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
       {type === 'login' ? (
         <StyledParagraph login>
           {text}
-          {error && <span style={{ color: '#c92a2a' }}>{error}</span>}
+          {error && (
+            <span className="visible" style={{ color: '#c92a2a' }}>
+              {error}
+            </span>
+          )}
         </StyledParagraph>
       ) : (
         <StyledParagraph register>
           {text}
-          {error && <span style={{ color: '#c92a2a' }}>{error}</span>}
+          {error && (
+            <span className="visible" style={{ color: '#c92a2a' }}>
+              {error}
+            </span>
+          )}
         </StyledParagraph>
       )}
       {type === 'login' ? (
