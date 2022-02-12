@@ -37,6 +37,7 @@
 ![register](https://user-images.githubusercontent.com/82787408/148334983-f62cfb2f-7258-4020-b073-69f073076e2d.JPG)
 
 #### 메인 페이지
+![main](https://user-images.githubusercontent.com/82787408/153703356-8f5f38ef-83a7-4090-a076-8026869413e8.JPG)
 
 #### 영상 정보
 ##### 1500px
@@ -45,5 +46,6 @@
 ##### 768px 1024px
 ![videoviewer7681024](https://user-images.githubusercontent.com/82787408/148337060-88e6b7e2-8f80-4b72-b74a-f357be05f8b1.jpg)
 
-
+#### 리뷰
+![reviews](https://user-images.githubusercontent.com/82787408/153703367-2643bc55-2e20-436d-ad9c-61af1341c29a.JPG)
 
