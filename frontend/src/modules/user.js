@@ -19,6 +19,7 @@ const checkSaga = createRequestSaga(CHECK, authAPI.check);
 function checkFailureSaga() {
   try {
     localStorage.removeItem('user');
+    localStorage.removeItem('auth');
   } catch (e) {
     console.log('localStorage is not working');
   }
@@ -28,6 +29,7 @@ function* logoutSaga() {
   try {
     yield call(authAPI.logout);
     localStorage.removerItem('user');
+    localStorage.removeItem('auth');
   } catch (e) {
     console.log(e);
   }
