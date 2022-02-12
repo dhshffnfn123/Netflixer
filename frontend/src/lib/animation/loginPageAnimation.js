@@ -11,4 +11,10 @@ const visibleAuthFromBlock = keyframes`
     100% { opacity: 1;}
 `;
 
-export { visibleLogo, visibleAuthFromBlock };
+const visibleError = keyframes`
+    0% { opacity: 1;}
+    70% { opacity: 1;}
+    100% { opacity: 0;}
+`;
+
+export { visibleLogo, visibleAuthFromBlock, visibleError };
