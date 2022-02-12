@@ -16,6 +16,7 @@ const RegisterForm = ({ history }) => {
   }));
 
   const onChange = (e) => {
+    setError('');
     const { value, name } = e.target;
     dispatch(
       changeField({
@@ -28,6 +29,7 @@ const RegisterForm = ({ history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setError('');
     const { username, password, passwordConfirm } = form;
     if ([username, password, passwordConfirm].includes('')) {
       setError('Please fill in the blanks');

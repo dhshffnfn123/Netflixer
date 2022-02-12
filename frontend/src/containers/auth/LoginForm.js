@@ -28,6 +28,7 @@ const LoginForm = ({ history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setError('');
     const { username, password } = form;
     dispatch(login({ username, password }));
   };
@@ -41,12 +42,10 @@ const LoginForm = ({ history }) => {
     if (authError) {
       console.log('Error!');
       console.log(authError);
-      alert('로그인 실패');
       setError('Failed');
       return;
     }
     if (auth) {
-      console.log('로그인 성공!');
       dispatch(check());
     }
   }, [auth, authError, dispatch]);
