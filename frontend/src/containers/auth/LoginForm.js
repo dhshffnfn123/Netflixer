@@ -37,6 +37,7 @@ const LoginForm = ({ history }) => {
   }, [dispatch]);
 
   useEffect(() => {
+    setError('');
     if (authError) {
       console.log('Error!');
       console.log(authError);

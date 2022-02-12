@@ -49,6 +49,7 @@ const RegisterForm = ({ history }) => {
   }, [dispatch]);
 
   useEffect(() => {
+    setError('');
     if (authError) {
       if (authError.response.status === 409) {
         setError('This account already exists');
@@ -58,10 +59,9 @@ const RegisterForm = ({ history }) => {
       return;
     }
     if (auth) {
-      console.log('회원가입 성공!');
       console.log(auth);
-      dispatch(check());
       alert('회원가입에 성공하였습니다.');
+      dispatch(check());
     }
   }, [auth, authError, dispatch]);
 
