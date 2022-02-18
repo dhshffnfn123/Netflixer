@@ -11,6 +11,9 @@ const ReviewItemBlock = styled.div`
   @media (min-width: 1500px) {
     margin-left: 100px;
   }
+  @media (min-width: 768px) {
+    width: 400px;
+  }
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
