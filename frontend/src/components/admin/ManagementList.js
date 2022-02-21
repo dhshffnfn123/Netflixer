@@ -44,10 +44,10 @@ const ManagementList = () => {
         <Chart />
       </ChartBox>
       <ManagementListBox>
-        <ManageButton />
-        <ManageButton />
-        <ManageButton />
-        <ManageButton />
+        <ManageButton>A</ManageButton>
+        <ManageButton>B</ManageButton>
+        <ManageButton>C</ManageButton>
+        <ManageButton>D</ManageButton>
       </ManagementListBox>
     </ManagementListBlock>
   );
