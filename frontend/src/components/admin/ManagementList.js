@@ -28,12 +28,16 @@ const ManageButton = styled(Button)`
   margin-top: 1.8rem;
   width: 350px;
   height: 350px;
+  @media (max-width: 1024px) {
+  }
 `;
 const Chart = styled.div`
   background: ${palette.fontColor};
   margin-top: 1.8rem;
   width: 700px;
   height: 345px;
+  @media (max-width: 1024px) {
+  }
 `;
 
 const ManagementList = () => {
