@@ -5,7 +5,7 @@
 
 <br>
 
-## Program Stacks
+## 🛠 Program Stacks
 ### Client
 > + React
 > + react-router-dom v5
@@ -20,7 +20,7 @@
 
 <br>
 
-## 기능 설명
+## 🙋‍♂️ 기능 설명
 > - 로그인 및 회원가입
 > - 미디어의 정보 제공
 > - 리뷰 작성 기능
@@ -30,7 +30,7 @@
 
 <br>
 
-## UI
+## 🖥 UI
 #### 로그인
 ![login](https://user-images.githubusercontent.com/82787408/148334856-1b7c2f9c-67ce-443b-95d5-f8760ae5aee1.JPG)
 #### 회원가입
