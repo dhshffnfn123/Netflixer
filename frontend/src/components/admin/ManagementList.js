@@ -65,14 +65,14 @@ const ManagementList = () => {
   return (
     <ManagementListBlock>
       <ChartBox>
-        <Chart />
-        <Chart />
+        <Chart /> {/* 당일 리뷰 작성 횟수 */}
+        <Chart /> {/* 당일 회원가입 회원 수 */}
       </ChartBox>
       <ManagementListBox>
-        <ManageButton>A</ManageButton>
-        <ManageButton>B</ManageButton>
-        <ManageButton>C</ManageButton>
-        <ManageButton>D</ManageButton>
+        <ManageButton>A</ManageButton> {/* 영상물 작성 */}
+        <ManageButton>B</ManageButton> {/* 영상물 수정 */}
+        <ManageButton>C</ManageButton> {/* 영상물 삭제 */}
+        <ManageButton>D</ManageButton> {/* 회원 관리 */}
       </ManagementListBox>
     </ManagementListBlock>
   );
