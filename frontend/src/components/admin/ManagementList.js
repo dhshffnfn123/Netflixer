@@ -69,10 +69,10 @@ const ManagementList = () => {
         <Chart /> {/* 당일 회원가입 회원 수 */}
       </ChartBox>
       <ManagementListBox>
-        <ManageButton>A</ManageButton> {/* 영상물 작성 */}
-        <ManageButton>B</ManageButton> {/* 영상물 수정 */}
-        <ManageButton>C</ManageButton> {/* 영상물 삭제 */}
-        <ManageButton>D</ManageButton> {/* 회원 관리 */}
+        <ManageButton>컨텐츠 추가</ManageButton> {/* 영상물 작성 */}
+        <ManageButton>컨텐츠 수정</ManageButton> {/* 영상물 수정 */}
+        <ManageButton>컨텐츠 삭제</ManageButton> {/* 영상물 삭제 */}
+        <ManageButton>회원 관리</ManageButton> {/* 회원 관리 */}
       </ManagementListBox>
     </ManagementListBlock>
   );
