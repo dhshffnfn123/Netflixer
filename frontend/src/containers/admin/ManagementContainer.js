@@ -5,3 +5,5 @@ import ManagementList from '../../components/admin/ManagementList';
 const ManagementContainer = () => {
   return <ManagementList />;
 };
+
+export default ManagementContainer;
