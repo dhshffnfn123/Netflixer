@@ -49,6 +49,7 @@ const Header = ({ user, onLogout }) => {
           </Link>
           {user ? (
             <div className="right">
+              {user === 'qudgns97' && <Button>관리자 페이지</Button>}
               <UserInfo>{user.username}</UserInfo>
               <Button onClick={onLogout} header grayborder>
                 LOGOUT
