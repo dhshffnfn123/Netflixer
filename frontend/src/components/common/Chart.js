@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   ResponsiveContainer,
-  AreaChart,
+  LineChart,
   ReferenceLine,
   XAxis,
   YAxis,
@@ -14,7 +14,9 @@ import {
 const Chart = () => {
   return (
     <Container>
-      <></>
+      <ResponsiveContainer>
+        <LineChart></LineChart>
+      </ResponsiveContainer>
     </Container>
   );
 };
