@@ -15,7 +15,9 @@ const Chart = () => {
   return (
     <Container>
       <ResponsiveContainer>
-        <LineChart></LineChart>
+        <LineChart>
+          <Tooltip />ㄴ
+        </LineChart>
       </ResponsiveContainer>
     </Container>
   );
