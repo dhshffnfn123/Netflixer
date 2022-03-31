@@ -10,6 +10,7 @@ const HeaderBlock = styled.div`
   width: 100%;
   background: #222222;
   box-shadow: 0px 2px 4px ${palette.logoFontColor};
+  z-index: 99;
 `;
 
 const Wrapper = styled(Responsive)`
