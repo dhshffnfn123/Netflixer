@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import palette from '../../lib/styles/palette';
 import {
   ResponsiveContainer,
   LineChart,
@@ -7,7 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from 'recharts';
-// recharts 꺾은선 그래프 사용 예정
+
 const data = [];
 for (let i = 0; i < 30; i++) {
   data.push({
@@ -34,4 +35,12 @@ const Chart = () => {
 };
 export default Chart;
 
-const Container = styled.div``;
+const Container = styled.div`
+  background: ${palette.fontColor};
+  margin-top: 1.8rem;
+  width: 700px;
+  height: 345px;
+  @media (max-width: 1024px) {
+    width: 350px;
+  }
+`;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
 import Responsive from '../common/Responsive';
+import Chart from '../common/Chart';
 
 const ManagementListBlock = styled(Responsive)`
   margin: auto;
@@ -50,15 +51,6 @@ const ManageButton = styled(Button)`
     width: 350px;
   }
 `;
-const Chart = styled.div`
-  background: ${palette.fontColor};
-  margin-top: 1.8rem;
-  width: 700px;
-  height: 345px;
-  @media (max-width: 1024px) {
-    width: 350px;
-  }
-`;
 
 const ManagementList = () => {
   return (
@@ -68,7 +60,7 @@ const ManagementList = () => {
         <Chart /> {/* 당일 회원가입 회원 수 */}
       </ChartBox>
       <ManagementListBox>
-        <ManageButton onClick>컨텐츠 추가</ManageButton> {/* 영상물 작성 */}
+        <ManageButton>컨텐츠 추가</ManageButton> {/* 영상물 작성 */}
         <ManageButton>컨텐츠 수정</ManageButton> {/* 영상물 수정 */}
         <ManageButton>컨텐츠 삭제</ManageButton> {/* 영상물 삭제 */}
         <ManageButton>회원 관리</ManageButton> {/* 회원 관리 */}
