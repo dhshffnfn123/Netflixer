@@ -5,11 +5,30 @@ import Button from '../common/Button';
 import Responsive from '../common/Responsive';
 import Chart from '../common/Chart';
 
+const ManagementList = () => {
+  return (
+    <ManagementListBlock>
+      <ChartBox>
+        <Chart /> {/* 당일 리뷰 작성 횟수 */}
+        <Chart /> {/* 당일 회원가입 회원 수 */}
+      </ChartBox>
+      <ManagementListBox>
+        <ManageButton>컨텐츠 추가</ManageButton> {/* 영상물 작성 */}
+        <ManageButton>컨텐츠 수정</ManageButton> {/* 영상물 수정 */}
+        <ManageButton>컨텐츠 삭제</ManageButton> {/* 영상물 삭제 */}
+        <ManageButton>회원 관리</ManageButton> {/* 회원 관리 */}
+      </ManagementListBox>
+    </ManagementListBlock>
+  );
+};
+
+export default ManagementList;
+
 const ManagementListBlock = styled(Responsive)`
   margin: auto;
   margin-top: 5rem;
   height: 800px;
-  background: gray;
+  background: #2e2e2e;
   display: grid;
   grid-template-columns: 734px 734px;
   @media (max-width: 1500px) {
@@ -51,22 +70,3 @@ const ManageButton = styled(Button)`
     width: 350px;
   }
 `;
-
-const ManagementList = () => {
-  return (
-    <ManagementListBlock>
-      <ChartBox>
-        <Chart /> {/* 당일 리뷰 작성 횟수 */}
-        <Chart /> {/* 당일 회원가입 회원 수 */}
-      </ChartBox>
-      <ManagementListBox>
-        <ManageButton>컨텐츠 추가</ManageButton> {/* 영상물 작성 */}
-        <ManageButton>컨텐츠 수정</ManageButton> {/* 영상물 수정 */}
-        <ManageButton>컨텐츠 삭제</ManageButton> {/* 영상물 삭제 */}
-        <ManageButton>회원 관리</ManageButton> {/* 회원 관리 */}
-      </ManagementListBox>
-    </ManagementListBlock>
-  );
-};
-
-export default ManagementList;

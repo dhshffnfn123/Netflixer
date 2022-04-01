@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import {
   ResponsiveContainer,
-  LineChart,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
@@ -13,7 +14,7 @@ const data = [];
 for (let i = 0; i < 30; i++) {
   data.push({
     reviews: Math.floor(Math.random() * 10),
-    day: i,
+    day: i + 1,
   });
 }
 
@@ -23,12 +24,22 @@ const Chart = () => {
   return (
     <Container>
       <ResponsiveContainer>
-        <LineChart margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-          <XAxis />
-          <YAxis />
-          <CartesianGrid />
+        <BarChart
+          width="100%"
+          height="100%"
+          margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+          data={data}
+        >
+          <Bar dataKey="reviews" fill="#681e1e" />
+          <XAxis
+            dataKey="day"
+            ticks={[1, 5, 10, 15, 20, 25, 30]}
+            interval={0}
+          />
+          <YAxis ticks={[0, 2, 4, 6, 8, 10, 12]} />
+          <CartesianGrid strokeDasharray="4 3" vertical={false} opacity={0.2} />
           <Tooltip />
-        </LineChart>
+        </BarChart>
       </ResponsiveContainer>
     </Container>
   );
@@ -36,7 +47,7 @@ const Chart = () => {
 export default Chart;
 
 const Container = styled.div`
-  background: ${palette.fontColor};
+  background: ${palette.backgroundColor};
   margin-top: 1.8rem;
   width: 700px;
   height: 345px;
