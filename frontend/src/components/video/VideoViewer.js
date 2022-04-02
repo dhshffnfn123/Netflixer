@@ -2,7 +2,70 @@ import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 
-/* ------------------------------- VideoViewer ------------------------------ */
+const VideoViewer = ({ video, error, loading }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return (
+        <VideoViewerBlock style={{ color: 'white' }}>
+          존재하지 않는 페이지입니다.
+        </VideoViewerBlock>
+      );
+    }
+    return (
+      <VideoViewerBlock style={{ color: 'red' }}>오류 발생!</VideoViewerBlock>
+    );
+  }
+
+  if (loading || !video) {
+    return null;
+  }
+
+  const {
+    title,
+    release,
+    age,
+    runtime,
+    characters,
+    director,
+    summary,
+    picture,
+  } = video;
+  return (
+    <VideoViewerBlock>
+      <VideoPoster style={{ backgroundImage: `url("/img/${picture}.png")` }} />
+      <VideoInfo>
+        <Title>{title}</Title>
+        <Info>
+          <span>{release}</span> <span>{age}</span> <span>{runtime}</span>
+        </Info>
+        <Summary>{summary}</Summary>
+        <Director>감독 : {director}</Director>
+        <Director>
+          주연 :{' '}
+          {characters.map((character) => (
+            <span key={character} className="character">
+              {character}&nbsp;&nbsp;
+            </span>
+          ))}
+        </Director>
+        <StillCutText>Still Cut_</StillCutText>
+        <StillCut>
+          <div
+            style={{ backgroundImage: `url("/img/still/${picture}1.jpg")` }}
+          />
+          <div
+            style={{ backgroundImage: `url("/img/still/${picture}2.jpg")` }}
+          />
+          <div
+            style={{ backgroundImage: `url("/img/still/${picture}3.jpg")` }}
+          />
+        </StillCut>
+      </VideoInfo>
+    </VideoViewerBlock>
+  );
+};
+
+export default VideoViewer;
 
 const VideoViewerBlock = styled(Responsive)`
   margin-top: 5rem;
@@ -26,10 +89,11 @@ const VideoViewerBlock = styled(Responsive)`
 const VideoPoster = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
-  margin-left: 100px;
   box-shadow: 1px 1px 10px black;
+  width: 550px;
   @media (max-width: 1500px) {
     margin: 0;
+    width: 500px;
   }
   @media (max-width: 768px) {
     background-size: contain;
@@ -39,7 +103,6 @@ const VideoPoster = styled.div`
   }
 `;
 const VideoInfo = styled.div`
-  padding-left: 100px;
   @media (max-width: 1500px) {
     padding-left: 40px;
   }
@@ -119,7 +182,8 @@ const StillCutText = styled.p`
   text-shadow: 0 0 5px gray;
 
   @media (max-width: 1500px) {
-    margin-top: 100px;
+    margin-top: 120px;
+    margin-bottom: 10px;
   }
   @media (max-width: 1024px) {
     font-size: 1.5rem;
@@ -178,68 +242,3 @@ const StillCut = styled.div`
     }
   }
 `;
-
-const VideoViewer = ({ video, error, loading }) => {
-  if (error) {
-    if (error.response && error.response.status === 404) {
-      return (
-        <VideoViewerBlock style={{ color: 'white' }}>
-          존재하지 않는 페이지입니다.
-        </VideoViewerBlock>
-      );
-    }
-    return (
-      <VideoViewerBlock style={{ color: 'red' }}>오류 발생!</VideoViewerBlock>
-    );
-  }
-
-  if (loading || !video) {
-    return null;
-  }
-
-  const {
-    title,
-    release,
-    age,
-    runtime,
-    characters,
-    director,
-    summary,
-    picture,
-  } = video;
-  return (
-    <VideoViewerBlock>
-      <VideoPoster style={{ backgroundImage: `url("/img/${picture}.png")` }} />
-      <VideoInfo>
-        <Title>{title}</Title>
-        <Info>
-          <span>{release}</span> <span>{age}</span> <span>{runtime}</span>
-        </Info>
-        <Summary>{summary}</Summary>
-        <Director>감독 : {director}</Director>
-        <Director>
-          주연 :{' '}
-          {characters.map((character) => (
-            <span key={character} className="character">
-              {character}&nbsp;&nbsp;
-            </span>
-          ))}
-        </Director>
-        <StillCutText>Still Cut_</StillCutText>
-        <StillCut>
-          <div
-            style={{ backgroundImage: `url("/img/still/${picture}1.jpg")` }}
-          />
-          <div
-            style={{ backgroundImage: `url("/img/still/${picture}2.jpg")` }}
-          />
-          <div
-            style={{ backgroundImage: `url("/img/still/${picture}3.jpg")` }}
-          />
-        </StillCut>
-      </VideoInfo>
-    </VideoViewerBlock>
-  );
-};
-
-export default VideoViewer;

@@ -42,12 +42,14 @@ const ReviewListBlock = styled(Responsive)`
   padding-bottom: 3rem;
 `;
 const ReviewItemBlock = styled.div`
-  width: 100%;
+  @media (max-width: 1500px) {
+  }
   @media (max-width: 768px) {
     width: 400px;
     margin-right: auto;
     margin-left: auto;
   }
+  width: 100%;
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;

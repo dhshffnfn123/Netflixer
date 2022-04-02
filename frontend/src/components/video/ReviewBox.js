@@ -3,6 +3,25 @@ import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import WriteActionButtonsContainer from '../../containers/review/WriteActionButtonsContainer';
 
+const ReviewBox = ({ text, onChangeField, onPublish }) => {
+  const onChangeText = (e) => {
+    onChangeField({ key: 'text', value: e.target.value });
+  };
+
+  return (
+    <ReviewForm>
+      <ReviewBlock>
+        <WriteActionButtonsContainer onClick={onPublish} />
+        <ReviewInput
+          value={text}
+          onChange={onChangeText}
+          placeholder="리뷰를 작성하세요"
+        />
+      </ReviewBlock>
+    </ReviewForm>
+  );
+};
+export default ReviewBox;
 const ReviewBlock = styled(Responsive)`
   margin-top: 100px;
   padding-bottom: 1rem;
@@ -15,8 +34,8 @@ const ReviewBlock = styled(Responsive)`
 const ReviewForm = styled.form``;
 
 const ReviewInput = styled.input`
-  margin-left: 20px;
   width: 100%;
+  margin-left: 10px;
   background: transparent;
   border: 3px solid #444444;
   outline: none;
@@ -38,23 +57,3 @@ const ReviewInput = styled.input`
     font-size: 0.7rem;
   }
 `;
-
-const ReviewBox = ({ text, onChangeField, onPublish }) => {
-  const onChangeText = (e) => {
-    onChangeField({ key: 'text', value: e.target.value });
-  };
-
-  return (
-    <ReviewForm>
-      <ReviewBlock>
-        <WriteActionButtonsContainer onClick={onPublish} />
-        <ReviewInput
-          value={text}
-          onChange={onChangeText}
-          placeholder="리뷰를 작성하세요"
-        />
-      </ReviewBlock>
-    </ReviewForm>
-  );
-};
-export default ReviewBox;

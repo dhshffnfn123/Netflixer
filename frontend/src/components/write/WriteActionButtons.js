@@ -5,7 +5,6 @@ import Button from '../common/Button';
 const StyledButton = styled(Button)`
   position: unset;
   width: 100px;
-  margin-left: 100px;
   height: 100px;
   border-radius: 0;
   font-size: 0.8rem;
