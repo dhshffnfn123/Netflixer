@@ -21,6 +21,13 @@ for (let i = 0; i < 30; i++) {
 console.log(data);
 
 const Chart = () => {
+  const formatDay = (tick) => {
+    return tick + '일';
+  };
+  const formatTooltip = (day) => {
+    return day + '일';
+  };
+
   return (
     <Container>
       <ResponsiveContainer>
@@ -35,10 +42,15 @@ const Chart = () => {
             dataKey="day"
             ticks={[1, 5, 10, 15, 20, 25, 30]}
             interval={0}
+            tickFormatter={formatDay}
+            style={{ fontSize: '12px' }}
           />
-          <YAxis ticks={[0, 2, 4, 6, 8, 10, 12]} />
+          <YAxis ticks={[0, 2, 4, 6, 8, 10, 12]} style={{ fontSize: '12px' }} />
           <CartesianGrid strokeDasharray="4 3" vertical={false} opacity={0.2} />
-          <Tooltip />
+          <Tooltip
+            cursor={{ stroke: '#960000', fill: 'red', fillOpacity: 0.2 }}
+            labelFormatter={formatTooltip}
+          />
         </BarChart>
       </ResponsiveContainer>
     </Container>
