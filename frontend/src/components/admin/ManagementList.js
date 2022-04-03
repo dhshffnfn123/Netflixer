@@ -10,7 +10,7 @@ const ManagementList = () => {
     <ManagementListBlock>
       <ChartBox>
         <Chart /> {/* 당일 리뷰 작성 횟수 */}
-        <Chart /> {/* 당일 회원가입 회원 수 */}
+        <Chart /> {/* 전체 회원가입 회원 수 */}
       </ChartBox>
       <ManagementListBox>
         <ManageButton>컨텐츠 추가</ManageButton> {/* 영상물 작성 */}
