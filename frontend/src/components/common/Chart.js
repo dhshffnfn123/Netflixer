@@ -50,6 +50,16 @@ const Chart = () => {
           <Tooltip
             cursor={{ stroke: '#960000', fill: 'red', fillOpacity: 0.2 }}
             labelFormatter={formatTooltip}
+            itemStyle={{
+              fontSize: '0.8vw',
+              fontWeight: '600',
+              borderBottom: 'solid 3px #e9e9e9',
+              backgroundColor: 'white',
+              zIndex: 99,
+            }}
+            contentStyle={{}}
+            labelStyle={{}}
+            wrapperStyle={{}}
           />
         </BarChart>
       </ResponsiveContainer>
