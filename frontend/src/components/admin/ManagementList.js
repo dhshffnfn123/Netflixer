@@ -19,6 +19,7 @@ const ManagementList = () => {
         <ManageButton>회원 관리</ManageButton> {/* 회원 관리 */}
       </ManagementListBox>
     </ManagementListBlock>
+    //  관리 버튼 두개로 줄여야함 컨텐츠 관리, 회원 관리
   );
 };
 
