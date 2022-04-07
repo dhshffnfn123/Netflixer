@@ -3,7 +3,6 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
-
 import api from './api';
 import jwtMiddleware from './lib/jwtMiddleware';
 
