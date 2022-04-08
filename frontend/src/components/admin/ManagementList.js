@@ -60,7 +60,7 @@ const ManageButton = styled(Button)`
   background: ${palette.fontColor};
   margin-top: 1.8rem;
   width: 350px;
-  height: 150px;
+  height: 350px;
   @media (max-width: 1500px) {
     margin-left: 30px;
     width: 250px;
