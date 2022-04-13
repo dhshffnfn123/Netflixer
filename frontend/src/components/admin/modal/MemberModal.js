@@ -4,14 +4,23 @@ const MemberModal = () => {
   return (
     <FullScreen>
       <Container>
-        <></>
+        <Title>회원 관리</Title>
+        <Content>
+          <MemberListContainer></MemberListContainer>
+          <ControlButtonContainer>
+            <ControlButton />
+            <ControlButton />
+            <ControlButton />
+            <ControlButton />
+          </ControlButtonContainer>
+        </Content>
       </Container>
     </FullScreen>
   );
 };
+// 검색기능 넣을건지?
 
 export default MemberModal;
-
 const FullScreen = styled.div`
   width: 100%;
   height: 100%;
@@ -25,7 +34,19 @@ const FullScreen = styled.div`
   align-items: center;
 `;
 const Container = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 50%;
+  height: 50%;
   background-color: white;
+`;
+
+const Title = styled.p`
+  font-weight: bold;
+`;
+const Content = styled.div``;
+
+const MemberListContainer = styled.div``;
+const ControlButtonContainer = styled.div``;
+const ControlButton = styled.button`
+  width: 10%;
+  height: 10%;
 `;
