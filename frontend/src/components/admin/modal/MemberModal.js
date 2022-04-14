@@ -44,8 +44,14 @@ const Title = styled.p`
 `;
 const Content = styled.div``;
 
-const MemberListContainer = styled.div``;
-const ControlButtonContainer = styled.div``;
+const MemberListContainer = styled.div`
+  width: 70%;
+  height: 90%;
+`;
+const ControlButtonContainer = styled.div`
+  width: 25%;
+  height: 90%;
+`;
 const ControlButton = styled.button`
   width: 10%;
   height: 10%;
