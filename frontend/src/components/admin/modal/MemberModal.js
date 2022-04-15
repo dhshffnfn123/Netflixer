@@ -6,9 +6,12 @@ const MemberModal = () => {
       <Container>
         <Title>회원 관리</Title>
         <Content>
+          <MemberSearchContainer>
+            <Input />
+            <SearchButton>검색</SearchButton>
+          </MemberSearchContainer>
           <MemberListContainer></MemberListContainer>
           <ControlButtonContainer>
-            <ControlButton />
             <ControlButton />
             <ControlButton />
             <ControlButton />
@@ -34,14 +37,19 @@ const FullScreen = styled.div`
   align-items: center;
 `;
 const Container = styled.div`
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
   background-color: white;
 `;
 
 const Title = styled.p`
   font-weight: bold;
 `;
+
+const MemberSearchContainer = styled.div``;
+const Input = styled.input``;
+const SearchButton = styled.button``;
+
 const Content = styled.div``;
 
 const MemberListContainer = styled.div`
