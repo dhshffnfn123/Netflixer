@@ -10,4 +10,8 @@ const MemberList = () => {
 
 export default MemberList;
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  height: 20%;
+  border: solid 1px black;
+`;
