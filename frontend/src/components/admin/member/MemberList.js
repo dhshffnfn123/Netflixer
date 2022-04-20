@@ -4,7 +4,8 @@ const MemberList = () => {
   return (
     <Container>
       <IdBox></IdBox>
-      <PwBox></PwBox>
+      <CommentInquiryButton></CommentInquiryButton>
+      <DeleteButton />
     </Container>
   );
 };
@@ -18,4 +19,5 @@ const Container = styled.div`
 `;
 
 const IdBox = styled.div``;
-const PwBox = styled.div``;
+const CommentInquiryButton = styled.button``;
+const DeleteButton = styled.button``;
