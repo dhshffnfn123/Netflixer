@@ -16,8 +16,12 @@ const Container = styled.div`
   width: 100%;
   height: 20%;
   border: solid 1px black;
+  display: grid;
+  grid-template-columns: 60% 1fr 1fr;
 `;
 
-const IdBox = styled.div``;
+const IdBox = styled.div`
+  border: solid 1px black;
+`;
 const CommentInquiryButton = styled.button``;
 const DeleteButton = styled.button``;
