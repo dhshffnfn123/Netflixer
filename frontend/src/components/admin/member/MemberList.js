@@ -23,5 +23,7 @@ const Container = styled.div`
 const IdBox = styled.div`
   border: solid 1px black;
 `;
-const CommentInquiryButton = styled.button``;
+const CommentInquiryButton = styled.button`
+  border: black solid 1px;
+`;
 const DeleteButton = styled.button``;
