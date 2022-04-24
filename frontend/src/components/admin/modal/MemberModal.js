@@ -17,6 +17,9 @@ const MemberModal = () => {
             <ControlButton />
           </ControlButtonContainer>
         </Content>
+        <ReviewContainer>
+          <></>
+        </ReviewContainer>
       </Container>
     </FullScreen>
   );
@@ -64,3 +67,5 @@ const ControlButton = styled.button`
   width: 10%;
   height: 10%;
 `;
+
+const ReviewContainer = styled.div``;
