@@ -3,7 +3,9 @@ import styled from 'styled-components';
 const MemberReviewList = () => {
   return (
     <Container>
-      <></>
+      <VideoId></VideoId>
+      <CommentBox></CommentBox>
+      <TimeBox></TimeBox>
     </Container>
   );
 };
@@ -11,3 +13,9 @@ const MemberReviewList = () => {
 export default MemberReviewList;
 
 const Container = styled.div``;
+
+const VideoId = styled.div``;
+
+const CommentBox = styled.div``;
+
+const TimeBox = styled.div``;
