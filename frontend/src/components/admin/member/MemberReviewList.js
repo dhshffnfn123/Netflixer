@@ -19,3 +19,5 @@ const VideoId = styled.div``;
 const CommentBox = styled.div``;
 
 const TimeBox = styled.div``;
+
+const ButtonBox = styled.div``;
