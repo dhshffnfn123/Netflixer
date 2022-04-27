@@ -6,6 +6,11 @@ const MemberReviewList = () => {
       <VideoId></VideoId>
       <CommentBox></CommentBox>
       <TimeBox></TimeBox>
+      <ButtonBox>
+        <Button></Button>
+        <Button></Button>
+        <Button></Button>
+      </ButtonBox>
     </Container>
   );
 };
@@ -21,3 +26,4 @@ const CommentBox = styled.div``;
 const TimeBox = styled.div``;
 
 const ButtonBox = styled.div``;
+const Button = styled.button``;
