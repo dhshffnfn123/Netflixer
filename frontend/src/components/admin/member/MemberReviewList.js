@@ -26,4 +26,6 @@ const CommentBox = styled.div``;
 const TimeBox = styled.div``;
 
 const ButtonBox = styled.div``;
-const Button = styled.button``;
+const Button = styled.button`
+  background-color: aliceblue;
+`;
