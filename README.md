@@ -16,7 +16,7 @@
 ### 💻 Server
 > + Node.js
 > + koa (koa-bodyparser, koa-router ...)
-> + MongoDB
+> + MongoDB (mongoose)
 > + jsonwebtoken
 
 <br>
