@@ -17,7 +17,10 @@ const MemberReviewList = () => {
 // 회원 선택시 나타날 선택한 회원의 리뷰
 export default MemberReviewList;
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 const VideoId = styled.div``;
 
