@@ -7,9 +7,7 @@ const MemberReviewList = () => {
       <CommentBox></CommentBox>
       <TimeBox></TimeBox>
       <ButtonBox>
-        <Button>1</Button>
-        <Button>2</Button>
-        <Button>3</Button>
+        <Button>리뷰 삭제</Button>
       </ButtonBox>
     </Container>
   );
