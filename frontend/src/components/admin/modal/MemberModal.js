@@ -42,7 +42,7 @@ const FullScreen = styled.div`
 const Container = styled.div`
   width: 80%;
   height: 80%;
-  background-color: white;
+  background-color: #616161;
 `;
 
 const Title = styled.p`
