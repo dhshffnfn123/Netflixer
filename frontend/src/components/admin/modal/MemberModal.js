@@ -8,7 +8,7 @@ const MemberModal = () => {
         <Content>
           <MemberSearchContainer>
             <Input />
-            <SearchButton>검색</SearchButton>
+            <SearchButton>돋보기 아이콘</SearchButton>
           </MemberSearchContainer>
           <MemberListContainer></MemberListContainer>
           <ControlButtonContainer>
