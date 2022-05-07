@@ -12,9 +12,8 @@ const MemberModal = () => {
           </MemberSearchContainer>
           <MemberListContainer></MemberListContainer>
           <ControlButtonContainer>
-            <ControlButton />
-            <ControlButton />
-            <ControlButton />
+            <ControlButton children={'회원 삭제'} />
+            <ControlButton children={'리뷰 조회'} />
           </ControlButtonContainer>
         </Content>
         <ReviewContainer>
