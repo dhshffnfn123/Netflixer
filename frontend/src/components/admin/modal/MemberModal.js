@@ -52,7 +52,9 @@ const MemberSearchContainer = styled.div``;
 const Input = styled.input``;
 const SearchButton = styled.button``;
 
-const Content = styled.div``;
+const Content = styled.div`
+  width: 100%;
+`;
 
 const MemberListContainer = styled.div`
   width: 70%;
