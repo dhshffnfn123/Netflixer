@@ -54,6 +54,7 @@ const SearchButton = styled.button``;
 
 const Content = styled.div`
   width: 100%;
+  height: 100%;
 `;
 
 const MemberListContainer = styled.div`
