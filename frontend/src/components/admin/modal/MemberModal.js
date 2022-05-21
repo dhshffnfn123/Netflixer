@@ -41,6 +41,7 @@ const FullScreen = styled.div`
 const Container = styled.div`
   width: 80%;
   height: 80%;
+  box-shadow: 0 0 10px black;
   background-color: #616161;
 `;
 
