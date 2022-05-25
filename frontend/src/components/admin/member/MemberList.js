@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 const IdBox = styled.div`
-  border: solid 1px black;
+  border: solid 1px red;
 `;
 const CommentInquiryButton = styled.button`
   border: black solid 1px;
