@@ -14,7 +14,7 @@ export default MemberList;
 
 const Container = styled.div`
   width: 100%;
-  height: 30%;
+  height: 40%;
   border: solid 1px black;
   display: grid;
   grid-template-columns: 60% 1fr 1fr;
