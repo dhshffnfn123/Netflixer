@@ -25,5 +25,6 @@ const IdBox = styled.div`
 `;
 const CommentInquiryButton = styled.button`
   border: black solid 1px;
+  background-color: transparent;
 `;
 const DeleteButton = styled.button``;
