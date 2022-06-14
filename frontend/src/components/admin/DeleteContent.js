@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
 const DeleteContent = () => {
-  return (
-    <Container>
-      <></>
-    </Container>
-  );
+  return <Container></Container>;
 };
 export default DeleteContent;
 
