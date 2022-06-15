@@ -5,4 +5,7 @@ const DeleteContent = () => {
 };
 export default DeleteContent;
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;
