@@ -71,4 +71,6 @@ const ControlButton = styled.button`
   height: 10%;
 `;
 
-const ReviewContainer = styled.div``;
+const ReviewContainer = styled.div`
+  background-color: red;
+`;
