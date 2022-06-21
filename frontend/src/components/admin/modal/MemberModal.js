@@ -74,3 +74,5 @@ const ControlButton = styled.button`
 const ReviewContainer = styled.div`
   background-color: red;
 `;
+
+const Box = styled.div``;
