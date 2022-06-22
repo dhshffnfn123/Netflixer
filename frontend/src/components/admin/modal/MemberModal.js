@@ -75,4 +75,6 @@ const ReviewContainer = styled.div`
   background-color: red;
 `;
 
-const Box = styled.div``;
+const Box = styled.div`
+  width: 100%;
+`;
