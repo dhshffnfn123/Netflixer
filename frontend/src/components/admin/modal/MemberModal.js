@@ -77,4 +77,5 @@ const ReviewContainer = styled.div`
 
 const Box = styled.div`
   width: 100%;
+  height: 100%;
 `;
