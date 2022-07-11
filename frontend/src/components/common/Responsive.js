@@ -6,7 +6,7 @@ const ResponsiveBlock = styled.div`
   padding-right: 1rem;
   width: 1500px;
   margin: 0 auto;
-
+  // 전체화면
   @media (max-width: 1500px) {
     width: 1024px;
   }
